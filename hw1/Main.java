@@ -1,4 +1,5 @@
 package hw1;
+
 public class Main {
     static public void main(String[] args) {
         System.out.println("Привет, мир!"); // проверка
@@ -17,37 +18,55 @@ public class Main {
         String result = String.format("%.2f", moon_weight);
         System.out.println("Мой вес на Луне равен: " + result + " кг");
         System.out.println();
-    
-    /*
-     * Видоизмените программу, созданную в упражнении 1.2, таким образом, чтобы
-     * она выводила таблицу перевода дюймов в метры. Выведите значения длины до
-     * 12 футов через каждый дюйм. После каждых 12 дюймов выведите пустую строку.
-     * (Один метр приблизительно равен 39,37 дюйма.)
-     */
-            double meter;
-            int foot = 12*12;
-            int inch;
-            int count = 0;
 
-            for (inch = 1; inch <= foot; inch++) {
-                meter = inch / 39.37;
-                System.out.println(inch + " дюйму соответствует " + meter + " метра");
+        /*
+         * Видоизмените программу, созданную в упражнении 1.2, таким образом, чтобы
+         * она выводила таблицу перевода дюймов в метры. Выведите значения длины до
+         * 12 футов через каждый дюйм. После каждых 12 дюймов выведите пустую строку.
+         * (Один метр приблизительно равен 39,37 дюйма.)
+         */
+        double meter;
+        int foot = 12 * 12;
+        int inch;
+        int count = 0;
 
-                count++;
+        for (inch = 1; inch <= foot; inch++) {
+            meter = inch / 39.37;
+            System.out.println(inch + " дюйму соответствует " + meter + " метра");
 
-                if (count == 12) {
-                    System.out.println();
-                    count = 0; 
-                }
+            count++;
+
+            if (count == 12) {
+                System.out.println();
+                count = 0;
             }
         }
-    } 
 
+        /*
+         * Реализовать таблицу истинности: т.е. у нас есть p = false и q = true.
+         * Чему будет равно p & q == ? , ? - вынести в таблицу.
+         */
 
-/*
- * Реализовать таблицу истинности: т.е. у нас есть p = false и q = true.
- * Чему будет равно p & q == ? , ? - вынести в таблицу.
- */
+        boolean[] bool = { true, false };
+        boolean p, q, z;
+        System.out.println("p\t&\tq\t==\t?");
+        System.out.println("===============================================");
+        for (int i = 0; i < bool.length; i++) {
+            p = bool[i];
+            int j = 0;
+            while (j < bool.length) {
+                q = bool[j++];
+                int k = 0;
+                do {
+                    z = bool[k++];
+                    boolean pq = p & q;
+                    System.out.println(p + "     |    " + q + "     |        "+ pq);
+                } while (k != bool.length);
+            }
+        }
+    }
+}
+
 
 
  
