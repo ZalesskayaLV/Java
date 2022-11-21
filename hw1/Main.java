@@ -1,5 +1,8 @@
 package hw1;
 
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 public class Main {
     static public void main(String[] args) {
         System.out.println("Привет, мир!"); // проверка
@@ -60,10 +63,40 @@ public class Main {
                 do {
                     z = bool[k++];
                     boolean pq = p & q;
-                    System.out.println(p + "     |    " + q + "     |        "+ pq);
+                    System.out.println(p + "     |    " + q + "     |        " + pq);
                 } while (k != bool.length);
             }
         }
+
+        /*
+         * Реализовать функцию возведения числа а в степень b. a, b ∈ Z. Сводя
+         * количество выполняемых действий к минимуму.
+         * Пример 1: а = 3, b = 2, ответ: 9
+         * Пример 2: а = 2, b = -2, ответ: 0.25
+         * Пример 3: а = 3, b = 0, ответ: 1
+         * Пример 4: а = 0, b = 0, ответ: не определено
+         * Пример 5
+         * входные данные находятся в файле input.txt в виде
+         * b 3
+         * a 10
+         * Результат нужно сохранить в файле output.txt
+         * 1000
+         */
+
+        public class Test {
+            static int power(int a, int b) {
+                int result = 1;
+                for (int i = 1; i <= b; i++) {
+                    result = result * a;
+                }
+                return result;
+            }
+
+        }
+
+        FileReader fr = new FileReader("input.txt");
+        
+        FileWriter fw = new FileWriter("output.txt");
     }
 }
 
@@ -72,17 +105,3 @@ public class Main {
  
  
 
-  /*
-   * Реализовать функцию возведения числа а в степень b. a, b ∈ Z. Сводя
-   * количество выполняемых действий к минимуму.
-   * Пример 1: а = 3, b = 2, ответ: 9
-   * Пример 2: а = 2, b = -2, ответ: 0.25
-   * Пример 3: а = 3, b = 0, ответ: 1
-   * Пример 4: а = 0, b = 0, ответ: не определено
-   * Пример 5
-   * входные данные находятся в файле input.txt в виде
-   * b 3
-   * a 10
-   * Результат нужно сохранить в файле output.txt
-   * 1000
-   */
